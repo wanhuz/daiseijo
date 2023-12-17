@@ -17,10 +17,12 @@ class Zip:
         
         return unzip_path
     
-    def cbzip(dirpath : str) -> None:
+    def cbzip(dirpath : str) -> str:
         cbz_fpath = dirpath + '.cbz'
 
         with zipfile.ZipFile(cbz_fpath, 'w') as zip:
             for file in listdir(dirpath):
                 filepath = dirpath + '/' + file
                 zip.write(filepath, arcname=file)
+        
+        return cbz_fpath

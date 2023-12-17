@@ -8,3 +8,8 @@ class Util:
             new_name = fname
 
         return new_name
+    
+    def is_zip(zip_path):
+        if ('.zip' in zip_path):
+            return True
+        return False

@@ -5,7 +5,7 @@ import os, shutil
 
 def main():
     
-    print('Input zip path: (Drag and drop compatible)')
+    print('Input zip file or folder: (Drag and drop compatible)')
     zip_path = input()
     zip_path = Util.clean_drag_and_drop_quote(zip_path)
     is_given_dir = False
@@ -37,7 +37,6 @@ def main():
     print('CBZipping file...')
     cbzed_file = Zip.cbzip(unzip_path)
     shutil.rmtree(unzip_path)
-
 
     if (is_given_dir):
         new_cbz_name = cbzed_file.replace('_temp', '')
